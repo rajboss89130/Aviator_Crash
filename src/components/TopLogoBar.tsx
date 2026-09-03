@@ -4,6 +4,8 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { PWAInstallButton } from "./PWAInstallButton";
+import jilluIcon from "../assets/JILLU-ICON.png";
+import jilluLogo from "../assets/JILLU-LOGO.png";
 
 interface TopLogoBarProps {
   balance: number;
@@ -78,10 +80,18 @@ export const TopLogoBar: React.FC<TopLogoBarProps> = ({
         </button>
 
         <div className="flex items-center gap-1.5 cursor-pointer">
-          {/* Red Rounded Plane Icon */}
           {/* JILLU ICON */}
           <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0 overflow-hidden">
-            <img src={`${process.env.PUBLIC_URL}/JILLU-ICON.png`} alt="JILLU" className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]" />
+            <img 
+              src={jilluIcon} 
+              alt="JILLU" 
+              className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]" 
+              onError={(e) => {
+                if (!e.currentTarget.src.endsWith("/JILLU-ICON.png")) {
+                  e.currentTarget.src = "/JILLU-ICON.png";
+                }
+              }}
+            />
           </div>
           {/* AVIATOR Text & Provider */}
           <div className="flex flex-col justify-center ml-0.5">
@@ -89,8 +99,17 @@ export const TopLogoBar: React.FC<TopLogoBarProps> = ({
               AVIATOR
             </span>
             <div className="flex items-center gap-1 mt-0.5">
-              <span className="text-[7px] sm:text-[8px] uppercase font-bold text-white/40 tracking-[0.1em] leading-none">by</span>
-              <img src={`${process.env.PUBLIC_URL}/JILLU-LOGO.png`} alt="JILLU" className="h-2 sm:h-2.5 object-contain object-left opacity-90" />
+              <span className="text-[7px] sm:text-[8px] uppercase font-bold text-white/50 tracking-[0.1em] leading-none">by</span>
+              <img 
+                src={jilluLogo} 
+                alt="JILLU" 
+                className="h-2.5 sm:h-3 max-w-[60px] object-contain object-left opacity-95 brightness-110" 
+                onError={(e) => {
+                  if (!e.currentTarget.src.endsWith("/JILLU-LOGO.png")) {
+                    e.currentTarget.src = "/JILLU-LOGO.png";
+                  }
+                }}
+              />
             </div>
           </div>
         </div>

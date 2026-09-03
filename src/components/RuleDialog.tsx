@@ -97,6 +97,40 @@ export default function RuleModal({
                 Every round outcome is mathematically generated via cryptographic SHA-256 HMAC hashing. Results are predetermined before the round starts and cannot be altered by either the casino or player. You can independently verify any round using the seed details in the round history ribbon.
               </p>
             </div>
+
+            {/* Game & Provider Metadata Badge */}
+            <div className="bg-gradient-to-br from-[#12141c] to-[#1a1e2d] rounded-xl p-4 border border-white/10 space-y-3">
+              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                <span className="text-xs font-bold text-white uppercase tracking-wider">Game Information</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#eab308]/20 text-[#facc15]">Official Release</span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs">
+                <div>
+                  <span className="text-[#64748b] block text-[10px] uppercase font-bold">Game Title</span>
+                  <span className="font-semibold text-white">Aviator by JILLU</span>
+                </div>
+                <div>
+                  <span className="text-[#64748b] block text-[10px] uppercase font-bold">Game Provider</span>
+                  <span className="font-semibold text-[#facc15]">JILLU Gaming</span>
+                </div>
+                <div>
+                  <span className="text-[#64748b] block text-[10px] uppercase font-bold">Category</span>
+                  <span className="font-semibold text-white">Crash / Multiplier</span>
+                </div>
+                <div>
+                  <span className="text-[#64748b] block text-[10px] uppercase font-bold">RTP</span>
+                  <span className="font-semibold text-[#22c55e]">97.00%</span>
+                </div>
+                <div>
+                  <span className="text-[#64748b] block text-[10px] uppercase font-bold">Technology</span>
+                  <span className="font-semibold text-white">React 18 / WebGL</span>
+                </div>
+                <div>
+                  <span className="text-[#64748b] block text-[10px] uppercase font-bold">Release Version</span>
+                  <span className="font-semibold text-white">v1.0.0 (2026)</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

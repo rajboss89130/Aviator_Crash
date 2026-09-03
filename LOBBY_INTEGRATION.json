@@ -1,0 +1,85 @@
+{
+  "gameName": "Aviator by JILLU",
+  "gameId": "jillu-aviator-crash-v1",
+  "provider": "JILLU",
+  "category": "Crash / Multiplier Game",
+  "gameType": "Real-Time Multiplayer Crash",
+  "supportedDevices": [
+    "Desktop (macOS, Windows, Linux)",
+    "Mobile (iOS Safari, Android Chrome)",
+    "Tablet (iPad, Android Tablets)",
+    "PWA (Installable Web App)"
+  ],
+  "technology": "React 18 / TypeScript / PixiJS v7 / WebGL 2.0 / Web Audio API / Tailwind CSS",
+  "version": "1.0.0",
+  "releaseDate": "2026-09-03",
+  "rtp": "97.00%",
+  "volatility": "Dynamic / Player-Controlled",
+  "maxMultiplier": "10000.00x",
+  "minBet": 1.0,
+  "maxBet": 1000.0,
+  "defaultCurrency": "$",
+  "shortDescription": "Ascend into high-altitude multipliers with Aviator by JILLU. Place dual bets, enjoy silky 60FPS flight physics, and cash out before the lucky plane flies away!",
+  "fullDescription": "Aviator by JILLU is an ultra-modern, high-retention Crash game built for premier casino operators. Designed with 60FPS WebGL canvas physics, spatial audio feedback, and dual betting consoles, players experience thrilling multiplier escalations with complete cryptographic fairness. Features include Auto-Bet, Auto-Cashout, interactive live player bets, and on-demand SHA-256 HMAC provably fair verification.",
+  "lobbyCard": {
+    "title": "Aviator",
+    "subTitle": "by JILLU",
+    "badge": "HOT / 97% RTP",
+    "category": "Crash Games",
+    "tags": [
+      "Premium",
+      "Mobile Ready",
+      "Fast Gameplay",
+      "Provably Fair",
+      "Multiplayer",
+      "Crash Game",
+      "Dual Bet",
+      "JILLU"
+    ],
+    "thumbnailRequirements": {
+      "ratios": [
+        "16:9 (1920x1080 Landscape Banner)",
+        "1:1 (600x600 Square Card)",
+        "4:3 (800x600 Standard Card)",
+        "9:16 (1080x1920 Mobile Story/App Icon)"
+      ],
+      "formats": ["PNG", "WebP", "AVIF"],
+      "recommendedResolution": "1920x1080 (HD)",
+      "elements": [
+        "Red Airplane in ascent",
+        "Glowing Golden Multiplier curve",
+        "Official JILLU Gold Crown Logo"
+      ]
+    }
+  },
+  "integrationSpecifications": {
+    "launchUrlPattern": "/?token={SESSION_TOKEN}&currency={CURRENCY}&lang={LANG}&operator={OPERATOR_ID}&homeUrl={LOBBY_URL}",
+    "iframeSandbox": "allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock",
+    "recommendedFrameRatio": "16:9 on desktop, 100vh on mobile",
+    "postMessageEvents": [
+      {
+        "event": "JILLU_GAME_READY",
+        "description": "Fired when assets and WebGL engine are fully initialized."
+      },
+      {
+        "event": "JILLU_BET_PLACED",
+        "payload": "{ betIndex: number, amount: number, roundId: string }",
+        "description": "Notifies host operator of bet placement."
+      },
+      {
+        "event": "JILLU_CASH_OUT",
+        "payload": "{ betIndex: number, amount: number, multiplier: number, winAmount: number, roundId: string }",
+        "description": "Notifies host operator of win settlement."
+      },
+      {
+        "event": "JILLU_BALANCE_UPDATE",
+        "payload": "{ balance: number }",
+        "description": "Requests balance synchronization with operator wallet."
+      },
+      {
+        "event": "JILLU_EXIT_REQUEST",
+        "description": "Triggered when user clicks back to casino lobby."
+      }
+    ]
+  }
+}
