@@ -1,0 +1,8 @@
+{
+  "name": "Aviator by JILLU",
+  "description": "Professional casino Aviator Crash game module provided by JILLU. Real-time multiplier curve, dual betting console, and provably fair engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

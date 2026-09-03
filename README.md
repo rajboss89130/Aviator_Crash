@@ -1,70 +1,67 @@
-# BollyGaming Aviator Crash Game
+# Aviator Crash Game by JILLU
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Game Overview
+Aviator by JILLU is a premium, high-retention Crash game designed for modern online casinos. The game features a real-time ascending multiplier curve (an airplane taking off) that crashes at a randomly generated point. Players must cash out before the crash to win.
 
-## Available Scripts
+## 2. Game Features
+- **Real-Time Multiplayer Experience:** Live bets feed, recent round history, and real-time multiplier tracking.
+- **Dual Betting Console:** Players can place up to two independent bets per round, allowing for diverse risk strategies (e.g., one safe auto-cashout, one risky manual cashout).
+- **Auto Bet & Auto Cashout:** Fully automated gameplay options for continuous play.
+- **Provably Fair Engine:** Cryptographically secure RNG with seed generation and client-side verification tools.
+- **Responsive Design:** Edge-to-edge mobile optimization with native app-like interactions, seamlessly scaling to desktop ultra-wide views.
+- **Premium Audio/Visuals:** 60FPS PixiJS/Canvas rendering, Doppler-effect engine audio, and sleek high-contrast casino UI.
 
-In the project directory, you can run:
+## 3. Technology Stack
+- **Frontend Framework:** React 18, TypeScript
+- **Styling:** Tailwind CSS (customized for casino luxury theme)
+- **Rendering Engine:** HTML5 Canvas (60FPS requestAnimationFrame loop)
+- **State Management:** Custom Event-Driven Game Engine
+- **Audio:** Web Audio API with spatial/pitch manipulation
+- **Build Tool:** Create React App / Webpack
 
-### `npm start`
+## 4. Project Structure
+```text
+src/
+├── api/             # Future backend/bridge integrations (CasinoBridge.ts)
+├── components/      # React components
+│   ├── aviator/     # Core game board, consoles, and UI components
+│   ├── pixicomp/    # 60FPS Canvas rendering layers
+│   └── modals/      # Information and settings modals
+├── game-engine/     # Core game logic, state, RNG, and physics
+├── store/           # Global state wrappers
+└── styles/          # Tailwind and global CSS
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 5. Installation Guide
+1. Run `npm install` to install all dependencies.
+2. Run `npm start` to start the local development server.
+3. Run `npm run build` to generate the production-ready static bundle.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 6. Configuration Guide
+Global game configuration can be found and extended within `src/game-engine/GameEngine.ts` (e.g., modifying default chips, currency symbol, minimum/maximum bet limits).
 
-### `npm test`
+## 7. Frontend Architecture
+The frontend utilizes a strict separation of concerns:
+- **GameEngine:** An event-emitting singleton that holds the absolute truth of the game state, multiplier, and user balance.
+- **React UI:** Subscribes to GameEngine events and updates the DOM declaratively.
+- **Canvas Renderer:** Bypasses React state completely for the core flight loop, reading directly from the GameEngine singleton via `requestAnimationFrame` to ensure zero-latency 60FPS visual updates.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 8. Backend Integration Points
+To connect to a real casino backend, modify `src/api/CasinoBridge.ts`. Currently, this acts as a stub to simulate wallet deposits, but it is architected to intercept bet placements and cashout requests to forward them via WebSockets or REST to your game server.
 
-### `npm run build`
+## 9. API Requirements
+A complete backend integration will require:
+1. `POST /api/bet` - Register a bet for the upcoming round.
+2. `POST /api/cashout` - Claim a multiplier before the crash.
+3. `WS /socket` - WebSocket stream for round states (Waiting, Takeoff, Crashed) and real-time multiplier ticks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 10. Casino Platform Integration Guide
+Provide the generated `build/` folder as a static asset to your platform. 
+The application can be embedded via `<iframe>` with `allow="autoplay"` to ensure sound engines function properly on load.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 11. Customization Guide
+- **Branding:** To modify the "JILLU" provider branding, update `LoadingScreen.tsx` and `TopLogoBar.tsx`.
+- **Theme:** Colors are controlled via `tailwind.config.js` and CSS variables in `src/styles/casino.css`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*Provided by JILLU*

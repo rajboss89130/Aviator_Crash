@@ -1,6 +1,15 @@
 {
-  "short_name": "Crash",
-  "name": "Bollygaming | Crash",
+  "id": "/",
+  "name": "Aviator Crash Game",
+  "short_name": "Aviator",
+  "description": "Real-time Aviator crash game with dynamic multiplier curve, dual betting console, provably fair engine, and auto-cashout.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0c0d12",
+  "theme_color": "#0c0d12",
+  "categories": ["games", "casino", "entertainment"],
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +17,34 @@
       "type": "image/x-icon"
     },
     {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "logo384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "any"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a0d14"/>
+      <stop offset="60%" stop-color="#14070a"/>
+      <stop offset="100%" stop-color="#080305"/>
+    </radialGradient>
+    <linearGradient id="redJet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2a4b"/>
+      <stop offset="50%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#9f1239"/>
+    </linearGradient>
+    <linearGradient id="wingShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b81"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+    <filter id="jetGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#e11d48" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle for Maskable Safe Zone -->
+  <rect width="512" height="512" fill="#0c0d12"/>
+  <circle cx="256" cy="256" r="230" fill="url(#bgGlow)" stroke="#ff2a4b" stroke-width="6" stroke-opacity="0.3"/>
+
+  <!-- Jet Flight Trajectory Curve -->
+  <path d="M 90 380 Q 200 370 270 280 T 380 170" fill="none" stroke="#e11d48" stroke-width="4" stroke-dasharray="8 6" opacity="0.6"/>
+
+  <!-- Red Jet Body -->
+  <g filter="url(#jetGlow)" transform="translate(10, -5)">
+    <!-- Main Fuselage -->
+    <path d="M 390 145 C 380 142 330 175 290 205 L 180 235 L 145 230 L 155 245 L 250 250 L 220 310 L 195 320 L 195 332 L 240 330 L 270 345 L 265 330 L 285 255 L 350 240 C 390 230 415 200 410 175 C 408 160 400 148 390 145 Z" fill="url(#redJet)"/>
+    <!-- Wings & Detail -->
+    <path d="M 285 255 L 205 385 L 230 388 L 320 255 Z" fill="url(#wingShine)"/>
+    <!-- Canopy Cockpit Window -->
+    <path d="M 345 175 Q 365 168 380 172 Q 365 185 340 185 Z" fill="#ffffff" opacity="0.85"/>
+    <!-- Propeller / Jet Blast Cone -->
+    <circle cx="140" cy="232" r="8" fill="#fbbf24" opacity="0.9"/>
+    <circle cx="130" cy="232" r="4" fill="#ffffff"/>
+  </g>
+
+  <!-- Multiplier Text "x" Icon Accent -->
+  <text x="256" y="445" text-anchor="middle" font-family="'Roboto', sans-serif" font-weight="900" font-size="44" fill="#fbbf24" letter-spacing="3">
+    AVIATOR
+  </text>
+</svg>

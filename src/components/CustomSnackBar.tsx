@@ -6,18 +6,16 @@ const CustomSnackBarItem = ({ crash, index, rising }: { crash: { payout: number,
         setTimeout(() => setVal(100), 100)
     }, [rising])
     return (
-        <div className='absolute top-0 flex items-center bg-[#123405] w-[300px] h-[56px] m-1 rounded-full border border-[#427f00] pl-2 pr-2 py-[5px] transition-all ease-in-out duration-150 font-roboto' style={{ left: "calc(50% - 300px / 2)", translate: `0 ${60 * (index - rising)}px`, opacity: val / 100 }}>
-            <div className='flex flex-col justify-center items-center w-[150px]'>
-                <span className='text-[#9ea0a3] text-[12px] leading-[16px]'>You have cashed out!</span>
-                <span className='text-white text-[20px] leading-[20px]'>{crash.payout.toFixed(2)}x</span>
+        <div className='absolute top-0 flex items-center bg-[#0b1f12]/95 backdrop-blur-md w-[260px] h-[40px] m-1 rounded-full border border-[#22c55e]/70 px-2 py-1 transition-all ease-in-out duration-150 shadow-[0_4px_16px_rgba(34,197,94,0.3)]' style={{ left: "calc(50% - 260px / 2)", translate: `0 ${46 * (index - rising)}px`, opacity: val / 100 }}>
+            <div className='flex flex-col justify-center text-left flex-1 pl-1 leading-none'>
+                <span className='text-[#86efac] text-[9px] uppercase font-bold tracking-wider'>Cashed Out</span>
+                <span className='text-white text-xs font-black'>@{crash.payout.toFixed(2)}x</span>
             </div>
-            <div className='flex flex-col relative overflow-hidden justify-center items-center w-[120px] h-full rounded-full bg-[#4eaf11] text-white font-bold text-[20px] leading-[20px]' style={{ textShadow: "0 1px 2px rgba(0,0,0,.5)" }}>
-                <svg className="absolute top-2 left-0 opacity-80" width={31} height={31}><use href="#svg-star-back" /></svg>
-                <svg className="absolute top-2 right-0 opacity-80 -scale-x-100" width={31} height={31}><use href="#svg-star-back" /></svg>
-                <span className='text-[14px]'>Win</span>
-                <span>{crash.win.toFixed(2)}</span>
+            <div className='flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#22c55e] text-[#052e16] font-black text-xs shadow-sm'>
+                <span className='text-[9px] uppercase font-bold opacity-80'>Win</span>
+                <span>+{crash.win.toFixed(2)}</span>
             </div>
-            <span className='text-[#d2d2d2] pl-2 font-bold font-roboto cursor-pointer text-[24px] opacity-50' style={{ textShadow: "0 1px 0 #97a4ae" }}>×</span>
+            <span className='text-white/50 hover:text-white px-1 font-bold cursor-pointer text-xs'>×</span>
         </div>
     )
 }

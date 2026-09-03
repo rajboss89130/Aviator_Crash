@@ -32,9 +32,9 @@ function App() {
         <AviatorProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="aviator">
-                <Route index element={<Aviator />} />
-              </Route>
+              <Route path="/" element={<Aviator />} />
+              <Route path="/aviator" element={<Aviator />} />
+              <Route path="*" element={<Aviator />} />
             </Routes>
           </BrowserRouter>
         </AviatorProvider>
