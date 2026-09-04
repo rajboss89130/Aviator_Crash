@@ -175,4 +175,4 @@ For production deployment with a remote multiplayer backend, replace the local t
 ```
 
 ---
-*© 2026 JILLU Gaming Studios. Proprietary & Confidential.*
+*Open-Source Technical Specifications & Engine Reference — Released under the MIT License.*

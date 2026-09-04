@@ -1,122 +1,71 @@
-# Aviator Crash Game by JILLU — Casino Ready Frontend Module
+# Aviator WebGL Game Engine & UI — Open Source Frontend Demonstration
 
-[![Game Version](https://img.shields.io/badge/version-v1.0.0-gold.svg)](https://jillu.games)
-[![Provider](https://img.shields.io/badge/provider-JILLU-red.svg)](https://jillu.games)
-[![RTP](https://img.shields.io/badge/RTP-97.00%25-green.svg)](https://jillu.games)
-[![Engine](https://img.shields.io/badge/Engine-React18%20%7C%20PixiJS%20%7C%20WebGL2-blue.svg)](https://jillu.games)
-
----
-
-## 1. Game Overview
-**Aviator by JILLU** is a premier, high-velocity multiplier Crash game engineered specifically for commercial online casino platforms. The game features an ascending Lucky Red Plane rendered on a 60FPS WebGL canvas curve that scales dynamically from **1.00x** up to **10,000.00x**. 
-
-Players strategically place up to two simultaneous bets and must decide when to **Cash Out** before the plane unexpectedly flies away. Built with authentic casino psychology, spatial audio feedback, and cryptographic Provably Fair verification, this module delivers elite player retention and engagement across all devices.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Type: Open Source](https://img.shields.io/badge/Type-Open--Source%20Demonstration-green.svg)](#project-positioning)
+[![Engine: React 18 | WebGL](https://img.shields.io/badge/Engine-React18%20%7C%20PixiJS%20%7C%20WebGL2-orange.svg)](#architecture)
+[![Status: Frontend Only](https://img.shields.io/badge/Status-Frontend%20Only-lightgrey.svg)](#disclaimer)
 
 ---
 
-## 2. Game Features
-- **Dual Independent Betting Consoles:** Allows simultaneous conservative and aggressive bet strategies (e.g. Bet 1: Auto Cashout at 1.50x to protect bankroll; Bet 2: Manual Cashout chasing 50.00x+).
-- **Automated Betting (Auto Bet & Auto Cashout):** Hands-free continuous gameplay with configurable multi-round bet cycles and target coefficient thresholds.
-- **60FPS High-Altitude WebGL Canvas:** Smooth exponential flight trajectory with dynamic particle thrust, grid coordinate markers, and atmospheric backdrop glow.
-- **Provably Fair SHA-256 Engine:** Mathematical fairness where every flight crash point is deterministically computed via HMAC-SHA256 hash chains using operator Server Seeds and player Client Seeds.
-- **Live Multiplayer Bet Feed:** Real-time simulated and operator-synced player ledger displaying active wagers, cashout events, and green win highlights.
-- **Dynamic Multiplier History Ribbon:** Instant visual access to previous round multipliers with color-coded tiers (Blue <2x, Purple 2x-10x, Gold 10x+).
-- **Spatial Audio & Sound Synthesis:** Dynamic engine acceleration pitch shifts, warning Doppler sounds, and celebratory cashout audio stingers.
-- **PWA (Progressive Web App) Installable:** Instant add-to-homescreen capability on iOS and Android for app-like native responsiveness.
+## ⚠️ Important Disclaimer
+
+> **THIS PROJECT IS A FRONTEND DEMONSTRATION ONLY.**
+>
+> It **does not** include real-money gambling functionality, betting services, payment processing, wallet management, financial transactions, or any backend gambling system.
+>
+> All game interactions, balance numbers, and multiplier flight curves are **simulated locally on the client side** for demonstration, research, UI experimentation, and educational purposes only.
 
 ---
 
-## 3. Technology Stack
-| Layer | Technologies & Libraries |
-|---|---|
-| **Core Framework** | React 18, TypeScript (Strict Mode) |
-| **Rendering Engine** | HTML5 Canvas 2D / PixiJS v7, WebGL 2.0 accelerated |
-| **Styling & Theme** | Tailwind CSS (Tailwind v3/v4), CSS Variables |
-| **State & Engine** | Custom Event-Driven Game Engine (`GameEngine.ts`) |
-| **Cryptography** | SHA-256 HMAC Provably Fair (`ProvablyFair.ts`) |
-| **Audio Engine** | HTML5 Web Audio API & Synth Audio Nodes |
-| **Build & Tooling** | Webpack 5, React Scripts, PostCSS, ESLint |
+## 1. Project Overview
+
+**Aviator WebGL Game Engine & UI** provides a high-performance, frontend-only implementation of an interactive crash-style game interface. Created for educational research, UI/UX experimentation, and HTML5 WebGL game engine study, this repository showcases modern web rendering techniques using React 18, TypeScript, PixiJS, WebGL 2.0, and the Web Audio API.
+
+### Intended Audience
+- **Frontend & WebGL Developers:** Exploring 60FPS canvas rendering loops, particle systems, and mathematical trajectory curves.
+- **UI/UX Designers:** Studying responsive gaming dashboards, dual-console interaction design, and real-time visual feedback.
+- **Computer Science Students & Educators:** Referencing event-driven state machine architecture and client-side Provably Fair math algorithms (HMAC-SHA256).
 
 ---
 
-## 4. Project Structure
+## 2. Project Positioning
+
+### What This Project IS:
+- ✅ **Open-Source Frontend Game Project:** Free and accessible codebase for studying web game mechanics.
+- ✅ **Game UI & Animation Demonstration:** Clean, responsive, 60FPS interactive user interface.
+- ✅ **HTML5 / WebGL Engine Example:** Demonstrates zero-lag Canvas rendering decoupled from React's virtual DOM.
+- ✅ **Interactive Frontend Experience:** Local client-side state simulation for testing user interaction flows.
+- ✅ **Developer Learning Resource:** Modular, strictly typed codebase serving as a reference for complex frontend apps.
+
+### What This Project IS NOT:
+- ❌ **NOT a Real-Money Gambling Platform:** No real currency is involved or supported.
+- ❌ **NOT an Online Betting Service:** No real wagers, payout servers, or gambling backends exist in this repository.
+- ❌ **NOT a Casino Operation:** Contains no operator backend, risk management, or house edge engine.
+- ❌ **NOT a Payment or Wallet System:** No deposit, withdrawal, banking, or crypto processing capabilities.
+- ❌ **NOT a Financial Product:** Purely software demonstration and visual interface code.
+
+---
+
+## 3. Frontend Features
+
+- **60FPS High-Altitude WebGL Canvas:** Smooth exponential trajectory flight rendering using PixiJS / HTML5 Canvas with dynamic particle exhaust, atmospheric glow, and coordinate grids.
+- **Interactive Dual-Console Game UI:** Simulated side-by-side betting control panels supporting independent test amounts, auto-bet toggles, and auto-cashout target multipliers.
+- **Synthesized Web Audio Sound Effects:** Zero-latency audio feedback using procedural Web Audio API nodes (engine pitch acceleration, Doppler flight sounds, cashout chimes).
+- **Responsive & Mobile-Friendly Layout:** Adaptive interface engineered for desktop screens, mobile devices, and installable Progressive Web Apps (PWA).
+- **Client-Side Provably Fair Math Demo:** Mathematical demonstration of HMAC-SHA256 seed hashing for transparent crash outcome verification.
+- **Live Multiplier History Ribbon:** Visually categorized historical round multiplier chips with color-coded statistical tiers.
+
+---
+
+## 4. Architecture & Technical Breakdown
+
+### System Architecture
 ```text
-.
-├── LOBBY_INTEGRATION.json     # Complete casino lobby card and launch specifications
-├── GAME_DOCUMENTATION.md      # In-depth technical architecture & math models
-├── CHANGELOG.md               # Version history and release notes
-├── metadata.json              # Platform identity and permission manifest
-├── public/                    # Static assets, Web App Manifest, Service Worker
-│   ├── JILLU-ICON.png         # Official JILLU Gold Crown Provider Icon
-│   ├── JILLU-LOGO.png         # Official JILLU Gaming Brand Logo
-│   ├── index.html             # HTML entry point with synchronized OpenGraph metadata
-│   └── manifest.json          # Web App Manifest for mobile installation
-└── src/
-    ├── api/                   # Integration bridge (CasinoBridge.ts for wallet/operator API)
-    ├── assets/                # Bundled images & high-resolution branding assets
-    ├── components/            # React UI presentation components
-    │   ├── aviator/           # GameBoard, BetConsole, HistoryRibbon, MultiplierDisplay
-    │   ├── modals/            # FairVerificationModal, IntegrationModal
-    │   ├── pixicomp/          # 60FPS AviatorCanvas, AppStage, Sprite renderers
-    │   ├── LoadingScreen.tsx  # JILLU branded casino splash & progress sequence
-    │   ├── TopLogoBar.tsx     # Operator header, wallet bar, and flyout drawer
-    │   ├── RuleDialog.tsx     # How to play modal with JILLU metadata
-    │   └── SettingModal.tsx   # Custom chip presets and SFX configuration
-    ├── game-engine/           # Core state machine, math curves, and Provably Fair RNG
-    └── index.tsx              # Application root bootstrap
-```
-
----
-
-## 5. Installation Guide
-
-### Prerequisites
-- Node.js version `18.x` or `20.x` LTS
-- NPM `9.x+` or Yarn / Bun
-
-### Step-by-Step Setup
-```bash
-# 1. Clone the repository or extract the production ZIP
-cd jillu-aviator-casino-ready-v1
-
-# 2. Install package dependencies
-npm install
-
-# 3. Start local development server (runs on port 3000)
-npm start
-
-# 4. Compile optimized production build
-npm run build
-```
-
----
-
-## 6. Configuration Guide
-Customization of game defaults is centralized in `src/game-engine/GameEngine.ts` and `src/lobby-info.js`:
-
-```typescript
-// Default Bet Configuration
-export const DEFAULT_CONFIG = {
-  minBet: 1.0,               // Minimum bet limit
-  maxBet: 1000.0,            // Maximum bet limit
-  currencySymbol: "$",       // Currency symbol (overridable via URL/iFrame query params)
-  defaultChips: [100, 200, 500, 1000], // Quick-selection chip presets
-  rtp: 0.97,                 // 97% Return-to-Player standard
-  maxMultiplier: 10000.0     // Hard cap ceiling
-};
-```
-
----
-
-## 7. Frontend Architecture
-
-### Decoupled Engine & Render Loop
-```
 ┌─────────────────────────────────────────────────────────┐
-│              GameEngine Singleton (State)               │
-│   - State: WAITING | ANIM_STARTED | ANIM_CRASHED       │
-│   - Multiplier Clock: Exponential Math Curve            │
-│   - Provably Fair SHA-256 Outcome Calculator            │
+│             GameEngine Singleton (Client State)         │
+│   - State FSM: WAITING | ANIM_STARTED | ANIM_CRASHED    │
+│   - Multiplier Clock: Exponential Math Trajectory       │
+│   - Local HMAC-SHA256 Outcome Calculator                │
 └──────────────┬───────────────────────────┬──────────────┘
                │ requestAnimationFrame      │ Observer Events
                ▼                           ▼
@@ -124,96 +73,124 @@ export const DEFAULT_CONFIG = {
 │   AviatorCanvas (WebGL)  │  │   React UI Components     │
 │   - 60FPS Flight Curve   │  │   - Dual Bet Consoles     │
 │   - Particle Emissions   │  │   - Multiplier HUD        │
-│   - Dynamic Camera Grid  │  │   - Live Bets Ledger      │
+│   - Dynamic Camera Grid  │  │   - Simulated Bet Feed    │
 └──────────────────────────┘  └───────────────────────────┘
 ```
 
-1. **Zero-Latency Rendering:** The `AviatorCanvas` directly queries `GameEngine.getInstance().currentMultiplier` during its native `requestAnimationFrame` render loop, bypassing React's reconciliation cycle to guarantee stutter-free 60FPS animation.
-2. **Declarative State Subscriptions:** UI controls (buttons, inputs, status tags) listen to discrete engine events (`onStateChange`, `onBetPlaced`, `onCashedOut`) to trigger re-renders only when necessary.
+### Technology Stack
+| Layer | Technologies & Libraries |
+|---|---|
+| **UI Framework** | React 18, TypeScript (Strict Mode) |
+| **Rendering Engine** | HTML5 Canvas 2D / PixiJS v7, WebGL 2.0 |
+| **Styling** | Tailwind CSS, CSS Variables |
+| **State Machine** | Custom Event-Driven Game Engine (`src/game-engine/GameEngine.ts`) |
+| **Audio Engine** | HTML5 Web Audio API & Procedural Synthesizers |
+| **Build System** | Webpack 5, React Scripts, PostCSS, ESLint |
+
+### Backend & Security Boundary Notice
+> **Notice:** This project **does not** provide backend authority, user account persistence, payment systems, wallet services, or financial transaction handling. Any developer wishing to connect this frontend to a remote backend must implement their own secure, server-authoritative API and authentication pipeline.
 
 ---
 
-## 8. Backend Integration Points
-To link the game to your centralized casino wallet and remote game servers:
+## 5. Security Notice
 
-1. **Seamless Wallet Integration:**
-   - In `src/api/CasinoBridge.ts`, implement `deductBalance(amount)` and `creditWin(amount, multiplier)` to call your platform's remote wallet API.
-2. **Server-Authoritative Multiplier Sync:**
-   - Switch `GameEngine.ts` from local RNG generation to listening to your backend WebSocket server ticks:
-   ```typescript
-   socket.on("ROUND_START", (payload) => engine.startFlight(payload.crashPoint));
-   socket.on("TICK", (payload) => engine.setMultiplier(payload.multiplier));
-   socket.on("CRASH", (payload) => engine.triggerCrash());
-   ```
+This codebase **does not** collect, transmit, or process:
+- User authentication credentials
+- Payment or banking information
+- Real currency or wallet balances
+- Personal identifiable information (PII)
+- Real-money transactions
+
+Do not attempt to send or store real financial data within this local demonstration project.
 
 ---
 
-## 9. API Requirements
-For an operator hosting their own server-authoritative multiplayer backend:
+## 6. Responsible Use Statement
 
-| Endpoint | Method | Description |
-|---|---|---|
-| `/api/v1/auth/session` | `POST` | Validates session token, returns user ID, username, and balance |
-| `/api/v1/game/bet` | `POST` | Places bet on active round; reserves funds from wallet |
-| `/api/v1/game/cashout` | `POST` | Claims cashout at current server timestamp & multiplier |
-| `/api/v1/game/history` | `GET` | Fetches last 50 round multipliers and seed hashes |
-| `wss://operator.com/aviator` | `WS` | Broadcasts real-time flight multiplier ticks and multiplayer bets |
+This project is published solely for software development, education, and frontend game technology research.
+
+Developers, researchers, and users who download or fork this codebase are solely responsible for ensuring that any derivative works or applications they build comply with all applicable local, regional, national, and international laws and regulations regarding web applications and software licensing.
 
 ---
 
-## 10. Casino Platform Integration Guide
+## 7. Installation & Local Setup
 
-### Iframe Embed Code
-```html
-<iframe 
-  src="https://your-casino.com/games/jillu-aviator/?token=USER_AUTH_TOKEN&currency=USD&lang=en&operator=CASINO_CORP" 
-  width="100%" 
-  height="100%" 
-  style="border: none; width: 100vw; height: 100vh;" 
-  allow="autoplay; fullscreen; clipboard-write;"
-  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock"
-></iframe>
-```
+### Prerequisites
+- Node.js `18.x` or `20.x` LTS
+- NPM `9.x+` or Yarn / Bun
 
-### PostMessage Interop Protocol
-The module communicates lifecycle events with the host casino frame via `window.parent.postMessage`:
+### Steps
+```bash
+# 1. Clone the repository
+git clone https://github.com/jillu-studios/aviator-webgl-demo.git
+cd aviator-webgl-demo
 
-```javascript
-window.addEventListener("message", (event) => {
-  switch(event.data.type) {
-    case "JILLU_GAME_READY":
-      console.log("Game loaded successfully");
-      break;
-    case "JILLU_BET_PLACED":
-      console.log("Bet placed:", event.data.payload);
-      break;
-    case "JILLU_CASH_OUT":
-      console.log("Cashout won:", event.data.payload);
-      break;
-    case "JILLU_EXIT_REQUEST":
-      window.location.href = "https://your-casino.com/lobby";
-      break;
-  }
-});
+# 2. Install dependencies
+npm install
+
+# 3. Start local development server (http://localhost:3000)
+npm start
+
+# 4. Create optimized production build
+npm run build
 ```
 
 ---
 
-## 11. Customization Guide
-- **Provider Logo & Branding:** Update `/src/assets/JILLU-ICON.png` and `/src/assets/JILLU-LOGO.png` to refresh brand assets.
-- **Color Palettes & Styling:** Modify `tailwind.config.js` or `src/styles/casino.css` to align button gradients, canvas glow, and panel backdrops with your casino theme.
-- **Audio Themes:** Customize sounds in `src/game-engine/SoundEngine.ts` to swap audio synthesizers or supply pre-rendered audio sprites.
+## 8. Project Structure
+
+```text
+.
+├── LICENSE                    # Open-source MIT License terms
+├── README.md                  # Project documentation & maintainer guide
+├── GAME_DOCUMENTATION.md      # WebGL & math engine technical specifications
+├── LOBBY_INTEGRATION.json     # Sample UI metadata & integration protocol spec
+├── CHANGELOG.md               # Version history and release notes
+├── metadata.json              # Platform identity manifest
+├── public/                    # Static assets, Web App Manifest, icons
+└── src/
+    ├── api/                   # Local state bridge interface
+    ├── assets/                # Branding assets & images
+    ├── components/            # React UI components (BetConsole, HistoryRibbon, etc.)
+    │   ├── aviator/           # Main game interface containers
+    │   ├── modals/            # Rule dialogs & Provably Fair verification modal
+    │   └── pixicomp/          # 60FPS WebGL canvas flight renderers
+    ├── game-engine/           # Core state machine, math formulas, audio engine
+    └── index.tsx              # Application bootstrap
+```
 
 ---
 
-### Official Metadata
-- **Game Name:** Aviator by JILLU
-- **Provider:** JILLU Gaming Studios
-- **Category:** Crash / Multiplier Game
-- **Game Type:** Real-Time Multiplayer Crash Game
-- **Supported Devices:** Desktop, Mobile, Tablet, iOS, Android, PWA
-- **Technology:** React 18, TypeScript, PixiJS v7, WebGL 2.0, Web Audio, Tailwind CSS
-- **Version:** 1.0.0
-- **Release Date:** September 2026
+## 9. Contributing
 
-*© 2026 JILLU Gaming Studios. All rights reserved. Commercial Casino Frontend Module.*
+Contributions from the open-source community are welcome! You can contribute by:
+- Improving WebGL rendering performance and particle effects.
+- Enhancing accessibility and responsive UI layouts.
+- Fixing frontend bugs and expanding test coverage.
+- Refining technical documentation and code comments.
+
+### Contribution Process
+1. Fork the repository.
+2. Create a descriptive feature branch (`git checkout -b feature/ui-enhancement`).
+3. Commit your changes (`git commit -m 'Improve canvas particle performance'`).
+4. Push to the branch (`git push origin feature/ui-enhancement`).
+5. Open a Pull Request for review.
+
+---
+
+## 10. License & Attributions
+
+This project is open-source software released under the permissive **[MIT License](LICENSE)**.
+
+```text
+MIT License
+Copyright (c) 2026 JILLU Gaming Studios
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files...
+```
+
+Developers are free to study, modify, adapt, and build upon this source code in accordance with the MIT License terms.
+
+---
+*Open-Source Frontend Game Demonstration & Technology Reference.*
